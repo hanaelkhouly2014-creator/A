@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>م. أميرة أحمد عطية مبارك | مدير المكتب الفني لرى البحيرة</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        water: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0284c7',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            900: '#0c4a6e',
+                        },
+                        eng: {
+                            50: '#f8fafc',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts (Cairo for Arabic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 transition-colors duration-300 min-h-screen flex flex-col">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 glass-card transition-all duration-300 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo / Name -->
+                <a href="#hero" class="text-lg sm:text-xl font-extrabold tracking-tight text-slate-900 dark:text-white flex items-center gap-3">
+                    <span class="w-10 h-10 rounded-xl bg-gradient-to-tr from-water-600 to-cyan-500 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-water-500/20">أ.م</span>
+                    <div>
+                        <span class="block text-sm sm:text-base font-bold">م. أميرة أحمد عطية</span>
+                        <span class="block text-[10px] text-water-600 dark:text-water-400 font-semibold">مدير المكتب الفني لرى البحيرة</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center space-x-1 space-x-reverse lg:space-x-2 font-medium text-sm">
+                    <a href="#about" class="px-3 py-2 text-slate-600 dark:text-slate-300 hover:text-water-600 dark:hover:text-water-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">نبذة تعريفية</a>
+                    <a href="#experience" class="px-3 py-2 text-slate-600 dark:text-slate-300 hover:text-water-600 dark:hover:text-water-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">الخبرات والمهام</a>
+                    <a href="#skills" class="px-3 py-2 text-slate-600 dark:text-slate-300 hover:text-water-600 dark:hover:text-water-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">المهارات التخصصية</a>
+                    <a href="#projects" class="px-3 py-2 text-slate-600 dark:text-slate-300 hover:text-water-600 dark:hover:text-water-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">المشاريع القومية</a>
+                    <a href="#contact" class="px-3 py-2 text-slate-600 dark:text-slate-300 hover:text-water-600 dark:hover:text-water-400 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800/60 transition">تواصل معي</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="flex items-center gap-3">
+                    <!-- Dark Mode Toggle -->
+                    <button id="themeToggle" class="p-2.5 rounded-xl bg-slate-200/70 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-water-600 focus:outline-none transition">
+                        <i id="themeIcon" class="fas fa-moon text-lg"></i>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 pt-3 pb-6 space-y-2">
+            <a href="#about" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">نبذة تعريفية</a>
+            <a href="#experience" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">الخبرات والمهام</a>
+            <a href="#skills" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">المهارات التخصصية</a>
+            <a href="#projects" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">المشاريع القومية</a>
+            <a href="#contact" class="mobile-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">تواصل معي</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-24">
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative py-20 lg:py-32 overflow-hidden">
+            <div class="absolute inset-0 -z-10 opacity-20 dark:opacity-15 pointer-events-none">
+                <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-tr from-water-500 to-cyan-400 rounded-full blur-[140px]"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-6 rounded-full bg-water-50 dark:bg-water-900/30 border border-water-200 dark:border-water-700/50 text-water-700 dark:text-water-300 text-xs sm:text-sm font-bold tracking-wide">
+                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    وزارة الموارد المائية والري — الإدارة العامة لرى البحيرة
+                </div>
+                
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-slate-900 dark:text-white tracking-tight max-w-4xl mx-auto leading-tight sm:leading-tight mb-6">
+                    م. أميرة أحمد عطية مبارك
+                </h1>
+
+                <p class="text-xl sm:text-2xl font-bold text-water-600 dark:text-water-400 mb-6">
+                    مهندسة مدنية | مدير المكتب الفني
+                </p>
+
+                <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    إدارة وتوجيه الأعمال الفنية والهندسية، متابعة المشروعات المائية الكبرى، التخطيط الاستراتيجي للموارد المائية، والإشراف على شبكات الري والصرف بمحافظة البحيرة.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#experience" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-water-600 hover:bg-water-700 text-white font-bold shadow-lg shadow-water-600/25 transition duration-200 flex items-center justify-center gap-2">
+                        <span>الخبرات المهنية</span> <i class="fas fa-arrow-down text-xs"></i>
+                    </a>
+                    <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl glass-card text-slate-800 dark:text-slate-100 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 font-bold transition duration-200 flex items-center justify-center gap-2">
+                        <span>تواصل مهني</span> <i class="fas fa-envelope text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-white/50 dark:bg-slate-900/50 border-y border-slate-200/60 dark:border-slate-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="p-8 sm:p-10 rounded-3xl glass-card relative shadow-lg">
+                        <div class="absolute top-4 left-4 w-12 h-12 rounded-2xl bg-water-500/10 text-water-600 flex items-center justify-center text-2xl font-bold">
+                            <i class="fas fa-building-columns"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">نبذة عن مسيرتي الهندسية</h3>
+                        <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+                            أعمل كمهندسة مدنية ومدير للمكتب الفني بالإدارة العامة لرى البحيرة بوزارة الموارد المائية والري. أمتلك سجلاً مهنياً متميزاً في إدارة وتنسيق المشروعات الهندسية المرتبطة بالبنية التحتية للمياه، مراجعة العقود والمقايسات الفنية، وإعداد التقارير الهندسية الاستراتيجية لضمان كفاءة توزيع المياه وحماية المجاري المائية.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 pt-4 border-t border-slate-200 dark:border-slate-800">
+                            <div>
+                                <span class="block text-2xl font-black text-water-600 dark:text-water-400">الوزارة</span>
+                                <span class="text-xs text-slate-500 dark:text-slate-400 font-semibold">الموارد المائية والري</span>
+                            </div>
+                            <div>
+                                <span class="block text-2xl font-black text-water-600 dark:text-water-400">الجهة</span>
+                                <span class="text-xs text-slate-500 dark:text-slate-400 font-semibold">الإدارة العامة لرى البحيرة</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mb-6 leading-tight">
+                            الريادة في الإدارة الفنية والهندسية للموارد المائية.
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                            تتمثل مهمتي في قيادة الفرق الهندسية بحترافية عالية، تطبيق أحدث المعايير الهندسية في أعمال التطهيرات، وتأهيل الترع، وإنشاء وتطوير المنشآت المائية، مع الالتزام التام بالخطط القومية لترشيد وتنمية الموارد المائية في مصر.
+                        </p>
+                        <div class="flex items-center gap-4 text-water-600 dark:text-water-400 font-bold">
+                            <i class="fas fa-check-circle text-lg"></i>
+                            <span>خبرة متقدمة في دراسة الجدوى والمقايسات الهندسية.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience & Roles Section -->
+        <section id="experience" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mb-4">الخبرات والمهام القيادية</h2>
+                    <p class="text-slate-600 dark:text-slate-400">المسؤوليات والأدوار الهندسية الرئيسية بقطاع الري.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="p-8 rounded-3xl glass-card hover:border-water-500/50 transition duration-300 flex flex-col justify-between shadow-md">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-water-500/10 text-water-600 flex items-center justify-center text-2xl mb-6">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">مدير المكتب الفني</h3>
+                            <p class="text-xs font-bold text-water-600 dark:text-water-400 mb-4">الإدارة العامة لرى البحيرة</p>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                الإشراف الكامل على أعمال المكتب الفني، مراجعة المستخلصات والمقايسات، التنسيق بين الأقسام المختلفة، وإعداد المذكرات الفنية والتقارير الدورية للعرض على قيادات الوزارة.
+                            </p>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-bold rounded-lg bg-water-50 dark:bg-water-900/40 text-water-600 dark:text-water-300 w-fit">قيادة وإدارة</span>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="p-8 rounded-3xl glass-card hover:border-water-500/50 transition duration-300 flex flex-col justify-between shadow-md">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center text-2xl mb-6">
+                                <i class="fas fa-helmet-safety"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">هندسة المشروعات المائية</h3>
+                            <p class="text-xs font-bold text-cyan-600 dark:text-cyan-400 mb-4">أعمال البنية التحتية والمنشآت</p>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                متابعة تنفيذ المشروعات القومية لتأهيل الترع والجسور والتحكم في شبكات الصرف والري بمحافظة البحيرة، لضمان الالتزام بالجداول الزمنية والمواصفات القياسية.
+                            </p>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-bold rounded-lg bg-cyan-50 dark:bg-cyan-900/40 text-cyan-600 dark:text-cyan-300 w-fit">إشراف هندسي</span>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="p-8 rounded-3xl glass-card hover:border-water-500/50 transition duration-300 flex flex-col justify-between shadow-md">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-2xl mb-6">
+                                <i class="fas fa-file-contract"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">العقود والمقايسات</h3>
+                            <p class="text-xs font-bold text-emerald-600 dark:text-emerald-400 mb-4">الدراسات المالية والفنية</p>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
+                                فحص ومراجعة المقايسات التقديرية، دفاتر القياس، مستخلصات المقاولين، وبت البت الفني والمالي للمناقصات والممارسات وفقاً للقوانين واللوائح المنظمة.
+                            </p>
+                        </div>
+                        <span class="px-3 py-1 text-xs font-bold rounded-lg bg-emerald-50 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-300 w-fit">عقود ومستخلصات</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20 bg-white/50 dark:bg-slate-900/50 border-y border-slate-200/60 dark:border-slate-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mb-4">المهارات التخصصية والتقنية</h2>
+                    <p class="text-slate-600 dark:text-slate-400">الخبرات والقدرات الهندسية والإدارية.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 rounded-2xl glass-card text-center shadow-sm">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-water-500/10 text-water-600 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-drafting-compass"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 dark:text-white mb-2">التصميم الهندسي والمدني</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">المنشآت المائية والخرسانية وتصميم القطاعات المائية.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl glass-card text-center shadow-sm">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 dark:text-white mb-2">إدارة المكاتب الفنية</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">إدارة فرق العمل، مراجعة الرسومات والمستندات التعاقدية.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl glass-card text-center shadow-sm">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 dark:text-white mb-2">إدارة الموارد المائية</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">تشغيل وصيانة شبكات الترع والمصارف والتحكم في التصرفات.</p>
+                    </div>
+
+                    <div class="p-6 rounded-2xl glass-card text-center shadow-sm">
+                        <div class="w-12 h-12 mx-auto rounded-xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center text-xl mb-4">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-900 dark:text-white mb-2">البرمجيات الهندسية</h4>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">AutoCAD, MS Project, Office Suite, GIS basics.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mb-4">المشاريع والمبادرات القومية</h2>
+                    <p class="text-slate-600 dark:text-slate-400">نماذج للأعمال الهندسية والمشروعات الخدمية بمحافظة البحيرة.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project 1 -->
+                    <div class="rounded-3xl glass-card overflow-hidden shadow-lg border border-slate-200/60 dark:border-slate-800/60">
+                        <div class="aspect-video bg-water-100 dark:bg-slate-800 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-water-600/30 to-cyan-500/30"></div>
+                            <i class="fas fa-water text-5xl text-water-600 dark:text-water-400 relative z-10"></i>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-water-600 dark:text-water-400 block mb-2">المشروع القومي</span>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">تأهيل وتبطين الترع بالبحيرة</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                الإشراف الفني ومتابعة تنفيذ أعمال تأهيل الترع لتقليل فاقد المياه وضمان وصولها لنهايات الجسور بكفاءة عالية.
+                            </p>
+                            <span class="px-2.5 py-1 text-xs font-bold rounded-md bg-water-50 dark:bg-water-900/40 text-water-600 dark:text-water-300">رى وبنية تحتية</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="rounded-3xl glass-card overflow-hidden shadow-lg border border-slate-200/60 dark:border-slate-800/60">
+                        <div class="aspect-video bg-cyan-100 dark:bg-slate-800 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-cyan-600/30 to-blue-500/30"></div>
+                            <i class="fas fa-building text-5xl text-cyan-600 dark:text-cyan-400 relative z-10"></i>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-cyan-600 dark:text-cyan-400 block mb-2">المنشآت المائية</span>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">تطوير وصيانة الأفواض والكباري</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                مراجعة التصميمات الهندسية ومقايسات صيانة الأعمال الصناعية على المجاري المائية بنطاق الإدارة العامة.
+                            </p>
+                            <span class="px-2.5 py-1 text-xs font-bold rounded-md bg-cyan-50 dark:bg-cyan-900/40 text-cyan-600 dark:text-cyan-300">إنشاءات مدنية</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="rounded-3xl glass-card overflow-hidden shadow-lg border border-slate-200/60 dark:border-slate-800/60">
+                        <div class="aspect-video bg-emerald-100 dark:bg-slate-800 flex items-center justify-center relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-emerald-600/30 to-teal-500/30"></div>
+                            <i class="fas fa-chart-line text-5xl text-emerald-600 dark:text-emerald-400 relative z-10"></i>
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-bold text-emerald-600 dark:text-emerald-400 block mb-2">التحول الرقمي والإداري</span>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">أرشفة وميكنة أعمال المكتب الفني</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4">
+                                تطوير النظم الإدارية واستخدام قواعد البيانات لمتابعة المقايسات والمستخلصات وتسهيل اتخاذ القرار الهندسي.
+                            </p>
+                            <span class="px-2.5 py-1 text-xs font-bold rounded-md bg-emerald-50 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-300">إدارة فنية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white/50 dark:bg-slate-900/50 border-t border-slate-200/60 dark:border-slate-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white mb-4">تواصل مهني</h2>
+                        <p class="text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+                            يسعدني التواصل الدائم واستقبال الاستفسارات الهندسية، والمراسلات الرسمية الخاصة بأعمال الري والمشروعات بمحافظة البحيرة.
+                        </p>
+
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-water-500/10 text-water-600 flex items-center justify-center text-xl">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs text-slate-500 dark:text-slate-400 font-semibold">البريد الإلكتروني</span>
+                                    <span class="text-slate-900 dark:text-white font-bold">amira.ahmed@beheira-irrigation.gov.eg</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center text-xl">
+                                    <i class="fas fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs text-slate-500 dark:text-slate-400 font-semibold">مقر العمل</span>
+                                    <span class="text-slate-900 dark:text-white font-bold">الإدارة العامة لرى البحيرة — دمنهور، مصر</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="p-8 rounded-3xl glass-card relative shadow-xl">
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">الاسم الكريم</label>
+                                <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 text-slate-900 dark:text-white focus:ring-2 focus:ring-water-500 focus:outline-none transition" placeholder="اسمك الكريم">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">البريد الإلكتروني</label>
+                                <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 text-slate-900 dark:text-white focus:ring-2 focus:ring-water-500 focus:outline-none transition" placeholder="example@domain.com">
+                            </div>
+
+                            <div>
+                                <label for="message" class="block text-sm font-bold text-slate-700 dark:text-slate-300 mb-2">نص الرسالة</label>
+                                <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/50 dark:bg-slate-900/50 text-slate-900 dark:text-white focus:ring-2 focus:ring-water-500 focus:outline-none transition" placeholder="اكتب رسالتك أو استفسارك هنا..."></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-water-600 hover:bg-water-700 text-white font-bold shadow-lg shadow-water-600/25 transition duration-200">
+                                إرسال الرسالة
+                            </button>
+                        </form>
+
+                        <!-- Notification Box -->
+                        <div id="formNotification" class="hidden absolute inset-0 bg-white/95 dark:bg-slate-900/95 rounded-3xl p-8 flex flex-col items-center justify-center text-center">
+                            <div class="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center text-2xl mb-4">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">تم إرسال الرسالة بنجاح!</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-sm mb-6">شكراً لتواصلك، سيتم الرد على استفسارك في أقرب وقت.</p>
+                            <button id="resetFormBtn" class="px-6 py-2.5 rounded-xl bg-slate-200 dark:bg-slate-800 text-slate-800 dark:text-white font-bold text-sm">إرسال رسالة أخرى</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-slate-200 dark:border-slate-800 py-8 bg-white dark:bg-slate-950 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-slate-500 dark:text-slate-400">
+                &copy; <span id="year"></span> م. أميرة أحمد عطية مبارك. جميع الحقوق محفوظة.
+            </p>
+            <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold">
+                تم التصميم للنشر على GitHub Pages
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Set dynamic year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Dark / Light Theme Toggle
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIcon.classList.replace('fa-sun', 'fa-moon');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Contact Form Handler
+        const contactForm = document.getElementById('contactForm');
+        const formNotification = document.getElementById('formNotification');
+        const resetFormBtn = document.getElementById('resetFormBtn');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formNotification.classList.remove('hidden');
+            contactForm.reset();
+        });
+
+        resetFormBtn.addEventListener('click', () => {
+            formNotification.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>
